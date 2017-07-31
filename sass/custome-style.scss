@@ -14,10 +14,10 @@
 @include transition(all 0.3s ease .0s);
 }
 
-body{margin:0px; padding:0px;font-family: 'latoregular';background: $nhc-lightsky;}
-body.cover-screen{
-	background: url("../images/bg-services.jpg") no-repeat center;	background-size: cover; background-attachment: fixed;
-}
+html{height: 100%;}
+
+body{margin:0px; padding:0px;font-family: 'latoregular';background: $nhc-lightsky; height: 100%; min-height: 100%; padding-top: 180px;background: url("../images/bg-services.jpg") no-repeat center;	background-size: cover; background-attachment: fixed;}
+
 h1,h2,h3,h4,h5,h6,p{
 	margin: 0px;
 	padding: 0px;
@@ -51,11 +51,7 @@ ul{margin: 0px; padding: 0px; list-style: none;}
 ========================================== 
 ============================================= */
 
-.badges-red{
-	background: $nhc-red;
-	color: $nhc-white;
-	text-align: center;
-}
+
 .material-icons.icon-sm{
 	font-size:$font-bigger; 
 	@include respond-to($medium-intermediate-2){
@@ -65,60 +61,10 @@ ul{margin: 0px; padding: 0px; list-style: none;}
 		font-size:20px;
 	}
 }
-.round-sm{
-	border-radius: 100%;
-	width: 28px;
-	height: 28px;
-	padding: 4px;
-}
-.bades-abs{
-	position: absolute;
-	right: -16px;
-    top: -16px;
-}
-.icon{
-	position: relative;
-	margin-right: 40px;
-	margin-top: 8px;
-	@include respond-to($medium-intermediate-2){
-		margin-right: 30px;
-	}
-	@include respond-to($extra-samll-intemediate){
-		margin-right: 21px;
-	}
-}
-.rounded-sm{
-	img{
-		float: left;
-		width: 50px;
-		height: 50px;
-	}
-}
-.dark_overlay {
-    background: rgba(0, 0, 0, 0.6) ;
-    left: 0;
-    position: absolute;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	opacity: 0;
-    
-}
+
+
 .rel-position{
 	position: relative;
-}
-.dark_overlay.show{
-	opacity: 1;
-	z-index: 9;
-@include transition(all 0.2s ease .0s);
-}
-
-.grid_panel{
-	background: $nhc-white;
-	border: 1px solid $nhc-gridpanel-border;
-	@include border-radius(5px);
-	padding: 10px;
-	overflow: hidden;
 }
 
 .gutter_btm_20{
@@ -132,377 +78,6 @@ ul{margin: 0px; padding: 0px; list-style: none;}
 		
 ========================================== 
 ============================================= */
-.login{
-	
-	color: $color-semiwhite;
-	font-size: $font-big;
-	a{
-		color: $color-semiwhite;
-		font-family: 'latolight';
-		text-align: center;
-		display: block;
-	}
-	section.login-content{
-		// position: absolute;
-		// @include transform(translate(-50%, -50%));
-		// top: 50%;
-		// left: 50%;
-		> h1{
-			letter-spacing: 6px;
-			
-		}
-	}
-	.overlay {
-		background: rgba(61, 136, 135, 0.6);
-		height: 100%;
-		left: 0;
-		position: fixed;
-		top: 0;
-		width: 100%;
-	}
-	.inputs{
-		position: relative;
-		margin: 20px 0;
-		input[type="text"],input[type="password"]{
-			padding:8px 8px 8px 50px;
-			width: 100%;
-			line-height: 43px;
-			background: none;
-			border: none;
-			border-bottom: 1px solid $color-white;
-			font-family: 'latolight';
-		}
-		::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		color: $color-semiwhite;
-		opacity: 1;
-		}
-		::-moz-placeholder { /* Firefox 19+ */
-		color: $color-semiwhite;
-		opacity: 1;
-		}
-		:-ms-input-placeholder { /* IE 10+ */
-		color: $color-semiwhite;
-		opacity: 1;
-		}
-		:-moz-placeholder { /* Firefox 18- */
-		color: $color-semiwhite;
-		opacity: 1;
-		}
-		
-
-		i{
-			position: absolute;
-			left: 0;
-			@include transform(translate(0, -50%));
-			top: 50%;
-			font-size: $font-big;
-		}
-		button[type="submit"]{
-			text-transform: uppercase;
-			color: $color-white;
-			padding: 6px 10px;
-			width: 100%;
-			float: left;
-			text-align: center;
-			background: $nhc-green;
-			border:none;
-			span{
-				vertical-align: middle;
-			}
-			i{
-				position: inherit;
-				margin: 0 20px;
-				transform: inherit;
-			}
-		}
-		
-	}
-	.user_login {
-			margin-top: 100px;
-	}
-}
-
-
-
-.focus-effect{
-	&:focus{
-		~.focus-border{
-			 @include border-on-focus;
-		}
-	}
-}
-.focus-effect{
-	~ .focus-border {
-		  @include focused-border;
-	 }
-}
-/* ========================================== 
-=============================================
-
-				HEADER SECTION 
-		
-========================================== 
-============================================= */
-header{
-	margin-bottom: 20px;
-	.top_head{
-		background: $nhc-blue;
-		color: $nhc-white;
-		position: relative;
-		padding-top: 15px;
-		padding-bottom: 7px;
-		.logo{
-			@include transform(translate(-50%,-50%));
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			z-index: 99;
-			@include respond-to($mobile){
-				top: 0px;
-				@include transform(translate(-50%,0%));
-			}
-		}
-		.logo ~ span{
-			margin-right: 25px;
-		}
-		.hemburger{
-			i{
-				font-size: $font-bigger;
-				margin-top: 7px;
-				cursor: pointer;
-			}
-		}
-		.search{
-			position: relative;
-			font-size: $font-medium;
-			margin-top: 8px;
-			@include respond-to($mobile){
-				margin-bottom: 30px;
-				margin-top: 17px;
-			}
-			input[type="text"]{
-				border: 0px;
-				border-bottom: 1px solid $nhc-white;
-				position: absolute;
-				background: none;
-				width: 100%;
-				left: 0px;
-				padding: 0 15px 0 35px;
-				color:$nhc-white;
-				&:focus{
-					background: $nhc-white;
-					padding-left: 8px;
-					color:$nhc-black
-				}
-			}
-			i{
-				font-size: $font-big;
-			}
-		}
-		
-		.user-notification{
-			 @include respond-to($mobile){
-				clear: both;
-				display: table;
-				float: none !important;
-				margin: auto;
-			 }
-		}
-		.logged-user{
-			> p{
-				float: right;
-				font-size: $font-semimedium;
-				font-family: 'latobold';
-				margin-right: 15px;
-				text-align: right;
-				 @include respond-to($medium-intermediate)
-					{
-						font-size: $font-small;
-					}
-				@include respond-to($extra-samll-intemediate)
-					{
-						font-size: $font-smaller;
-					}	
-				> span{
-					display: block;
-					font-size: $font-smaller;
-					text-transform: uppercase;
-					font-family: 'latoregular';
-					@include respond-to($medium-intermediate)
-					{
-						font-size: $font-default;
-					}
-					@include respond-to($extra-samll-intemediate)
-					{
-						font-size: 12px;
-					}
-				}
-			}
-		}
-	}
-
-	.bottom_head{
-		background: $nhc-greyheader;
-		color: $nhc-blue;
-		border-bottom: 2px solid $nhc-header-border;
-		font-size: 22px;
-		text-transform: uppercase;
-		p{
-			display: inline-block;
-			padding: 9px 0;
-			@include respond-to($extra-samll-landscape){
-				display: block;
-				width: 100%;
-			}
-		}
-	}
-}
-
-.b-notification{
-	position: absolute;
-	z-index: 99;
-	background: $nhc-white;
-	color:$nhc-black;
-	right: calc(0% + 340px);
-	top: 100%;
-	margin-top: 8px;
-	@include transition(all 0.2s ease-in-out 0s);
-	
-	@include panel-cap;
-	@include respond-to($medium-intermediate-2){
-		right: calc(0% + 294px);
-	}
-	@include respond-to($imobile-6-landscape){
-		right: inherit;
-		left: 50%;
-		@include transform(translate(-50%,0%));
-	}
-	
-	.b-header{
-		background: $nhc-white;
-		color: $nhc-black;
-		float: left;
-		padding: 10px 0;
-	    width: 100%;
-		padding-left: 15px;
-		padding-right: 15px;
-		border-bottom: 2px solid $nhc-header-border;
-		h4{
-			float: left;
-		}
-		span{
-			margin: 7px 0 0 15px;
-			cursor: pointer;
-			i{
-				font-size: 21px;
-			}
-		}
-	}
-	li{
-		list-style: none;
-		display: block;
-		border-bottom: 2px solid $nhc-header-border;
-		padding: 10px 15px;
-		clear: both;
-		float: left;
-		width: 100%;
-		&.active{
-			background: #d9e3ec;
-		}
-		&.all-notifications{
-			text-align: center;
-		}
-		figure{
-			float: left;
-		}
-		p{
-			padding-left: 72px;
-			margin: 0px;
-			span{
-				display: block;
-				font-size: $font-default;
-				color: $nhc-header-border;
-				margin-top: 5px;
-			}
-		}
-	}
-	&.notification-setting{
-		right: calc(100% - 59%);
-		aside {
-			> span{
-				left: 3px;
-				margin: 7px 0 0;
-				position: absolute;
-			}
-			> input[type="text"]{
-				width: 100%;
-				float: left;
-				border: 1px solid #000;
-				padding: 5px 5px 5px 25px;
-			}
-		}
-		li{
-			p{
-				margin: 0;
-				padding-left: 72px;
-				> span{
-					float:right;
-					margin: 0;
-				
-				}
-			}
-		}
-	}
-}
-
-
-// LEFT SLIDING NAV
-
-.sliding-nav{
-	background: $nhc-navbg;
-	width: 0;
-	height: 100%;
-	position: absolute;
-	padding: 0;
-	z-index: 99;
-	overflow: hidden;
-	white-space: nowrap;
-	li{
-		text-align: center;
-		margin-bottom: 1px;
-		a{
-			display: block;
-			padding: 10px;
-			font-size: $font-big;
-			text-transform: capitalize;
-			color: $nch-nav-color;
-			i{
-				display: block;
-				font-size: $font-biggest;
-				margin-bottom: 18px;
-				 margin-top: 15px;
-			}
-			&:hover	{
-				background: $nhc-darkred;
-				color: $nhc-white;
-			}
-		}
-		&.active{
-			background: $nhc-darkred;
-			a{
-				color: $nhc-white;
-				text-decoration: none;
-				outline: none;
-			}
-		}
-	}
-}
-.sliding-nav{
-	&.show{
-		width: 199px;
-		
-	}
-}
 
 
 // CUSTOME DROP DOWN
@@ -548,257 +123,41 @@ header{
 .sub-list.show-sub > i {transform: rotate(90deg);transition:all 0.5s ease;}
 
 
-// PANEL GRIDS
+// ============== FIXED HEADER SCROLLABLE TABLE ===================
 
-.grid_panel_header{
-	margin-bottom: 10px;
-	h1{
-		font-size: $font-semimedium;
-		text-transform: uppercase;
-		display: inline-block;
-		padding-top: 5px;
-		color: $nhc-oracle-green;
-	}
-	ul{
-		float: right;
-
-		li{
-			
-			float:left;
-			
-			a{
-				color: $nhc-white;
-				padding:3px;
-				padding: 5px 18px;
-				text-transform: uppercase;	
-				background: $nhc-greyheader;	
-				outline: none;
-				text-decoration: none;
-				float: left;
-			}
-
-			&.active{
-				a{
-					background: $nhc-Lochmara;
-				}
-			}
-		}
-		
-	}
-}
-
-.item_list{
-	float:left;
-	width: 100%;
-	li{
-		padding: 6px 8px 6px 18px;
-		border-radius: 7px;
-		position: relative;
-		margin-bottom: 15px;
-	}
-}
-
-.expandable{
-	cursor: pointer;
-	background: $nhc-spindle-sky;
-	text-align: center;
-	color: $nhc-oracle-green-dark;
-	display: table;
-	padding: 2px 0;
-	cursor: pointer;
-	i{
-		display: table-cell;
-		vertical-align: middle;
-	}
-}
-
-.to_do{
-	padding-bottom: 0px;
-	.item_list{
-		li{
-			float:left;
-			width: 100%;
-			background: $nhc-lightgrey;
-			overflow: hidden;
-			color:$nhc-oracle-green;
-			p{
-				float:left;
-				width: 90%;
-				@include respond-to($medium-intermediate ){
-					width: 85%;
-				}
-			}
-			i{
-				float: right;
-				cursor: pointer;
-			}
-			.border_corner{
-				position: absolute;
-				left: 0;
-				height: 100%;
-				width: 15px;
-				top: 0;
-				margin-left: -7px;
-			}
-			&.add_new{
-				i{
-					&:first-child{
-						margin-left: -10px;
-						margin-right: 15px;
-					}
-				}
-				p{
-					width: calc(90% - 30px);
-					@include respond-to($medium-intermediate){
-						width: calc(85% - 30px);
-					}
-				}
-			}
+.table-fixed  {
+	thead{
+	width: 97%;
+	tr{
+		th{
+			float: left;
+			border-bottom-width: 0;
 		}
 	}
+  }
 }
-
-
-.news{
-	padding-bottom: 0px;
-	.item_list{
-		li{
-			width: 100%;
-			background: $nhc-white;
-			overflow: hidden;
-			color:$nhc-oracle-green;
-			display: table;
-			padding: 0;
-			font-size: $font-small;
-			font-weight: bold;
-			text-transform: capitalize;
-			border-radius: 0;
-			margin-bottom: 0;
-			border-top: 1px solid $nhc-lightsky;
-			@include respond-to($medium-landscape){
-				font-size: $font-smaller;
-			}
-			img{
-				display: table-cell;
-				@include respond-to($medium-intermediate){
-					width: 100%;
-				}
-			}
-			p{
-				display: table-cell;
-				width: 69%;
-				vertical-align: middle;
-				padding: 0 15px;
-				@include respond-to($medium-intermediate){
-					width: 55%;
-				}
-				@include respond-to($mobile){
-					display: block;
-					width: 100%;
-					padding: 20px 15px;
-				}
-			}
-			i{
-				float: right;
-				cursor: pointer;
-			}
-			.border_corner{
-				position: absolute;
-				left: 0;
-				height: 100%;
-				width: 15px;
-				top: 0;
-				margin-left: -7px;
-			}
-			&.add_new{
-				i{
-					&:first-child{
-						margin-left: -10px;
-						margin-right: 15px;
-					}
-				}
-			}
-		}
-	}
-}
-
-.add_feeds{
-	position: absolute;
-	right: 0px;
-	height: 100%;
-	margin-right: 5px;
-	@include respond-to($mobile){
-		top: 100%;
-		margin-top: 15px;
-		height: 20%;
-		margin-right: 18px;
-		width: 96%;
-	}
-	cursor: pointer;
-	.rouded_border{
-		border: 2px dashed;
-		@include border-radius(5px);
-		height: 100%;
-		position: relative;
+.table-fixed  {
+	tbody{
+		height: 230px;
+		overflow-y: auto;
 		width: 100%;
-	}
-	div.v-mid{
-		position: relative;
-		@include transform(translate(-0%,-50%));
-		top: 50%;
-		font-size: $font-big;
-		i{
-			font-size: $font-extalarge;
+		td{
+			float: left;
+			border-bottom-width: 0;
 		}
-	}
+  }
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
 }
 
-.new_feed{
-	.grid_panel_body{
-		min-height: 305px;
-		position: relative;
-		@include respond-to($medium-intermediate){
-			min-height: 268px;
-		}
-		.vert_content{
-			position: absolute;
-			@include transform(translate(-0%,-50%));
-			top: 50%;
-			width: 100%;
-		}
-		.btm_buttons{
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-		}
-	}
-	button{
-		float: right;
-		border: 0;
-		color:  $nhc-jungle-mist;
-		background: none;
-		padding: 5px 18px;
 
-		&.create{
-		background: $nhc-breaker-bay;
-		color:#fff;
-		
-
-		i{
-			float: right;
-			font-size: 20px;
-		}
+// ================ PANEL HEADING
+.panel-default{
+	> .panel-heading{
+		background:$nhc-blue;
 	}
-	}
-	
-}
-
-.input_col_md{
-	margin: 10px 0;
-    padding: 10px;
-	width: 100%;
-	border: 1px solid $nhc-jungle-mist;
-}
+} 
 
 
 
