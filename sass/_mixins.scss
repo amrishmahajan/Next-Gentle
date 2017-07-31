@@ -6,12 +6,19 @@
           border-radius: $radius;
 }
 
-@mixin box-shadow($shadow) {
+@mixin box-shadow-old($shadow) {
   -webkit-box-shadow: $shadow;
      -moz-box-shadow: $shadow;
       -ms-box-shadow: $shadow;
           box-shadow: $shadow;
 }
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+    }
 
 @mixin transition($animation) {
   -webkit-transition: $animation;

@@ -76,61 +76,57 @@
 	<!-- ====================== TABLE SECTION  ========================= -->
 
 	<div class="container">
-  <div class="row">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4>
-            Fixed Header Scrolling Table 
-          </h4>
-        </div>
-        <table class="table table-fixed">
-          <thead>
-            <tr>
-              <th class="col-xs-2">#</th><th class="col-xs-8">Name</th><th class="col-xs-2">Points</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="col-xs-2">1</td><td class="col-xs-8">Mike Adams</td><td class="col-xs-2">23</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">2</td><td class="col-xs-8">Holly Galivan</td><td class="col-xs-2">44</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">3</td><td class="col-xs-8">Mary Shea</td><td class="col-xs-2">86</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">4</td><td class="col-xs-8">Jim Adams</td><td>23</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">5</td><td class="col-xs-8">Henry Galivan</td><td class="col-xs-2">44</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">6</td><td class="col-xs-8">Bob Shea</td><td class="col-xs-2">26</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">7</td><td class="col-xs-8">Andy Parks</td><td class="col-xs-2">56</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">8</td><td class="col-xs-8">Bob Skelly</td><td class="col-xs-2">96</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">9</td><td class="col-xs-8">William Defoe</td><td class="col-xs-2">13</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">10</td><td class="col-xs-8">Will Tripp</td><td class="col-xs-2">16</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">11</td><td class="col-xs-8">Bill Champion</td><td class="col-xs-2">44</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">12</td><td class="col-xs-8">Lastly Jane</td><td class="col-xs-2">6</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-  </div>
-</div>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="custom-dropdown" id="tt">
+						<input type="text" class="value-holder" /><i class="material-icons">&#xE5C5;</i>
+						<ul>
+							<li>Alle</li>
+							<li>Option 2</li>
+							<li>Option 3</li>
+							<li>Option 4</li>
+							<li>Option 5</li>
+						</ul>
+					</div>
+					<div class="table-textbox">
+						<input type="text" value="" placeholder="sok">
+					</div>
+				</div>
+				<table class="table table-fixed">
+					<thead>
+						<tr>
+							<th class="col-xs-3">Produktnummer</th>
+							<th class="col-xs-2">Kampanjenavn</th>
+							<th class="col-xs-1">Status</th>
+							<th class="col-xs-2">Kontoeier</th>
+							<th class="col-xs-3">Sted</th>
+							<th class="col-xs-1"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="col-xs-3">F5KIJC0SoigDnMm0prU7A</td>
+							<td class="col-xs-2">Epost</td>
+							<td class="col-xs-1">Stengt</td>
+							<td class="col-xs-2">jgh 3</td>
+							<td class="col-xs-3">dfd</td>
+							<td class="col-xs-1"><button class="green-3d-btn">Detaljer</button></td>
+						</tr>
+						<tr>
+							<td class="col-xs-3">F5KIJC0SoigDnMm0prU7A</td>
+							<td class="col-xs-2">Epost</td>
+							<td class="col-xs-1">Stengt</td>
+							<td class="col-xs-2">jgh 3</td>
+							<td class="col-xs-3">SANDDALSRINGEN 222,5225 NESTTUN</td>
+							<td class="col-xs-1"><button class="green-3d-btn">Detaljer</button></td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 
 	<!-- ====================== TABLE SECTION  ========================= -->
 
@@ -140,6 +136,29 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
 
+	<!-- SELECT DROP DOWN  -->
+	<script>
+		$(document).ready(function () {
+			$('#tt,#ttt').find('ul li').click(function () {
+				if (!$(this).hasClass('sub-list')) {
+					$(this).closest('div').find('input[type=text]').attr('value', $(this).html()).val($(this).html());
+				}
+			});
+
+			$(".custom-dropdown").click(function () {
+				$(this).toggleClass("show");
+			});
+
+			$(".sub-list").click(function () {
+				$(this).toggleClass("show-sub");
+				$(this).parents('.custom-dropdown').toggleClass("prohibeted");
+			});
+
+			$('body').on('click', '.sub-list ul', function () {
+				$(".custom-dropdown").removeClass("show");
+			})
+		})
+	</script>		
 
 </body>
 
