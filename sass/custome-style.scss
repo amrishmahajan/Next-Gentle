@@ -1,5 +1,6 @@
 @import 'variable';
 @import 'font';
+@import 'elegant';
 @import 'mixins';
 
 
@@ -16,7 +17,7 @@
 
 html{height: 100%;}
 
-body{color: $white;margin:0px; padding:0px;font-family: 'latoregular'; height: 100%; min-height: 100%; padding-top: 180px;background: url("../images/bg-services.jpg") no-repeat center;	background-size: cover; background-attachment: fixed;}
+body{color: $semi-white;margin:0px;font-family: 'latoregular'; height: 100%; min-height: 100%; padding-top: 170px;background: url("../images/bg-services.jpg") no-repeat center;	background-size: cover; background-attachment: fixed;}
 
 h1,h2,h3,h4,h5,h6,p{
 	margin: 0px;
@@ -26,9 +27,13 @@ h1,h2,h3,h4,h5,h6,p{
 .full-fluid{float:left; width:100%;}
 
 // PADDING
-.no-gutter{padding:0 !important;}
+.no-space{padding-left:0px !important;padding-right:0px !important;}
 .pad-left-null{padding-left: 0!important;}
 .pad-right-null{padding-right: 0!important;}
+.space_bottom_90{padding-bottom:90px!important; }
+
+// MARGINS
+.gutter-md-10{margin-top:20px; margin-bottom: 20px; }
 
 a, a:hover{text-decoration:none;}
 .no-floating{float:none;}
@@ -161,6 +166,9 @@ ul{margin: 0px; padding: 0px; list-style: none;}
 			}
 		}
 	}
+	&.panel{
+		border-width: 3px;
+	}
 } 
 
 .green-3d-btn{
@@ -173,6 +181,77 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66a180', end
 @include box-shadow( 0px, 3px, 0px, 1px rgba(76, 124, 99, 1));
 padding: 5px 8px;
 border: none;
+font-family: 'latobold';
+font-weight: bold;
+}
+.card{
+	padding-top: 30px;
+	padding-bottom: 30px;
+	.card_heading{
+		position: relative;
+		padding-bottom: 45px;
+		i{
+			font-size: 42px;
+			margin-bottom: 20px;
+			display: inline-block;
+		}
+		h3{
+			font-family: 'latobold';
+		}
+		span{
+			color: $semi-grey;
+			font-size: $font-medium;
+			font-family: 'latobold';
+		}
+		&::after{
+			border-bottom: 1px solid $semi-white;
+			bottom: 0;
+			content: "";
+			left: 50%;
+			position: absolute;
+			width: 50%;
+			@include transform(translateX(-50%));
+		}
+	}
+	.card_body{
+		margin: 20px 0;
+		ul{
+			li{
+				font-family: 'latobold';
+				font-size: $font-semimedium;
+				a{
+					display: block;
+					color: $semi-white;
+					padding: 3px 0;
+				}
+			}
+		}
+	}
+}
+
+.btn_bottom{
+	position: absolute;
+	bottom: 25px;
+	@include transform(translateX(-50%));
+	left: 50%;
+}
+.bordered{
+	border: 2px solid $semi-white;
+	@include border-radius(4px);
+}
+.grid-vert-equal{
+	@include equal-height;
+}
+.btn_md{
+	font-size: 19px;
+    padding: 10px 12px;
+}
+.btn_icon{
+	i{
+		float: left;
+		font-weight: bolder;
+		margin: 5px 9px 0 0;
+	}
 }
 
 

@@ -93,6 +93,22 @@
     }
 }
 
+@mixin equal-height{
+    display: table;
+    height: 60%;
+    .row{
+        display: table-row;
+        height: 100%;
+        .vert-equal{
+            display: table-cell;
+            height: 100%;
+            div{
+                @extend.vert-equal;
+            }
+        }
+    }
+}
+
 
 
 
