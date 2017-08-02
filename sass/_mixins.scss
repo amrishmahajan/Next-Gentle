@@ -1,45 +1,42 @@
 @import 'variable';
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
 }
 
 @mixin box-shadow-old($shadow) {
-  -webkit-box-shadow: $shadow;
-     -moz-box-shadow: $shadow;
-      -ms-box-shadow: $shadow;
-          box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
 }
 
 @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
-
-      -webkit-box-shadow:$top $left $blur $color #{$inset};
-      -moz-box-shadow:$top $left $blur $color #{$inset};
-      box-shadow:$top $left $blur $color #{$inset};
-    }
-
-@mixin transition($animation) {
-  -webkit-transition: $animation;
-     -moz-transition: $animation;
-      -ms-transition: $animation;
-          transition: $animation;
+    -webkit-box-shadow:$top $left $blur $color #{$inset};
+    -moz-box-shadow:$top $left $blur $color #{$inset};
+    box-shadow:$top $left $blur $color #{$inset};
 }
 
+@mixin transition($animation) {
+    -webkit-transition: $animation;
+    -moz-transition: $animation;
+    -ms-transition: $animation;
+    transition: $animation;
+}
 
-
-@mixin transform($horvertical){
-	-webkit-transform: $horvertical;
-	-ms-transform:$horvertical;
-	-ms-transform:$horvertical;
-	transform:$horvertical;
-} 
+@mixin transform($horvertical) {
+    -webkit-transform: $horvertical;
+    -ms-transform: $horvertical;
+    -ms-transform: $horvertical;
+    transform: $horvertical;
+}
 
 @mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
 }
 
 //@MEDIA QUIRES;
@@ -54,32 +51,28 @@
 //         @content; 
 //     }
 // }
-
-@mixin rel_position($rel){
-	position:relative;
+@mixin rel_position($rel) {
+    position: relative;
 }
 
-@mixin border-on-focus{
-    left: 0;
-    // transition: all 0.4s ease 0s;
+@mixin border-on-focus {
+    left: 0; // transition: all 0.4s ease 0s;
     @include transition(all 0.4s ease 0s);
     width: 100%;
 }
 
-@mixin focused-border{
-   background-color: $nhc-yellow;
+@mixin focused-border {
+    background-color: $nhc-yellow;
     bottom: 0;
     height: 3px;
     left: 50%;
-    position: absolute;
-    // transition: all 0.4s ease 0s;
-     @include transition(all 0.4s ease 0s);
+    position: absolute; // transition: all 0.4s ease 0s;
+    @include transition(all 0.4s ease 0s);
     width: 0;
 }
 
-@mixin panel-cap{
-    
-    &::before{
+@mixin panel-cap {
+    &::before {
         border-color: transparent transparent $nhc-white transparent;
         border-style: solid;
         border-width: 15px;
@@ -93,28 +86,30 @@
     }
 }
 
-@mixin equal-height{
+@mixin equal-height {
     display: table;
     height: 60%;
-    .row{
+    @include respond-to($mobile) {
+        display: block;
+        height: auto;
+    }
+    .row {
         display: table-row;
         height: 100%;
-        .vert-equal{
+        @include respond-to($mobile) {
+            display: block;
+            height: auto;
+        }
+        .vert-equal {
             display: table-cell;
             height: 100%;
-            div{
+            @include respond-to($mobile) {
+                display: block;
+                height: auto;
+            }
+            div {
                 @extend.vert-equal;
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
