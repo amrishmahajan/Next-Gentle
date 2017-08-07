@@ -77,7 +77,7 @@ a:hover {
 }
 
 .no-floating {
-    float: none;
+    float: none !important;
 }
 
 .capitalize {
@@ -97,6 +97,8 @@ ul {
 .pointer {
     cursor: pointer;
 }
+
+.align-right{text-align: right;}
 
 
 /* ========================================== 
@@ -368,6 +370,8 @@ ul {
     }
     .card_body {
         margin: 20px 0;
+        float: left;
+        width: 100%;
         ul {
             li {
                 font-family: 'latobold';
@@ -424,9 +428,16 @@ ul {
     }
 }
 
+.vert_mid{vertical-align: middle;}
+
 .btn_md {
     font-size: 19px;
     padding: 10px 12px;
+}
+
+.btn_me_wide{
+    @extend.btn_md;
+    padding: 6px 43px;
 }
 
 .btn_sm {
@@ -488,6 +499,7 @@ ul {
     }
 }
 .expands{
+    padding: 50px 0;
 	&.white{
 		background: $white;
 		div{
@@ -501,7 +513,8 @@ ul {
 					float: left;
 					padding: 10px 15px;
 					width: 100%;
-					color: $bright-sky;
+                    color: $bright-sky;
+                    margin: 10px 0;
 					div.pull-left{
 						p{
 							font-family: 'latobold';;
@@ -512,7 +525,12 @@ ul {
 							padding:2px 5px;
 							color: $jungle-green;
 						}
-					}
+                    }
+                    span.counts{
+                        color:$purple;
+                        font-family: 'latobold';
+                        font-size: $font-semimedium;
+                    }
 
 					button{
 						color: $white;
@@ -545,4 +563,27 @@ ul {
 			}
 		}
 	}
+}
+
+
+footer{
+    background: $footer-bg;
+    padding: 30px 0;
+    .semi_dark.title{
+        margin-bottom: 10px;
+        font-size: $font-semimedium;
+    }
+    .semi_dark{
+         color: $middle-grey;
+         margin-bottom: 15px;
+    }
+    li{
+        a{
+            display: block;
+            color:$white;
+            line-height: 22px;
+            font-weight: bold;
+        }
+    }
+
 }
