@@ -136,6 +136,9 @@ ul {
     border: 1px solid $oxley-dark-green;
     width: 90px;
     @include border-radius(3px);
+    @include respond-to ($mobile){
+        width: auto;
+    }
     /* ============================ FOR INPUT TEXT FIELD ============================ */
     input[type="text"] {
         color: $white;
@@ -152,10 +155,7 @@ ul {
         z-index: 999;
         color: $white;
     }
-    @include respond-to($extra-samll-landscape) {
-        width: 100%;
-        margin-right: 5px;
-    }
+    
 }
 
 .custom-dropdown>a {
@@ -271,6 +271,15 @@ ul {
 }
 
 .table-fixed {
+    &.table{
+        @include respond-to($medium-intermediate){
+             max-width: 1200px;
+             width: 1200px;
+        }
+    }
+    th,td{
+        padding:8px 5px !important;
+    }
     tbody {
         height: 230px;
         overflow-y: auto;
@@ -297,6 +306,9 @@ ul {
         background: $light-grey;
         float: left;
         width: 100%;
+        @include respond-to($medium-intermediate){
+            width: 1200px;
+        }
         .table-textbox {
             margin: 0 5px;
             float: left;
@@ -489,7 +501,11 @@ ul {
         display: table;
 		margin: auto;
 		text-align: center;
-		width: 90%;
+        width: 90%;
+
+        @include respond-to($mobile){
+            margin-top: 30px;
+        }
         li {
             display: inline-block;
 			float: none;
@@ -507,7 +523,10 @@ ul {
 			>ul{
 				float: left;
 				margin: 50px 0;
-				width: 100%;
+                width: 100%;
+                @include respond-to($mobile){
+                    margin: 0px;
+                }
 				li{
 					background: $middle-grey;
 					float: left;
@@ -515,21 +534,40 @@ ul {
 					width: 100%;
                     color: $bright-sky;
                     margin: 10px 0;
+                    li{
+                         margin: 0;
+                         padding: 6px 0;
+                    }
+                    @include respond-to($mobile){
+                        text-align: center;
+                    }
 					div.pull-left{
 						p{
 							font-family: 'latobold';;
-							font-size: $font-medium;
+                            font-size: $font-medium;
+                             @include respond-to($mobile){
+                                 margin-bottom: 15px;
+                             }
 						}
 						span{
 							background: $white;
 							padding:2px 5px;
-							color: $jungle-green;
+                            color: $jungle-green;
+                             @include respond-to($mobile){
+                                display: inline-block;
+                                margin-bottom: 15px;
+                             }
 						}
                     }
                     span.counts{
                         color:$purple;
                         font-family: 'latobold';
                         font-size: $font-semimedium;
+                        @include respond-to($mobile){
+                            clear: both;
+                            display: block;
+                            margin-bottom: 15px;
+                        }
                     }
 
 					button{
@@ -537,7 +575,15 @@ ul {
 						position: absolute;
 						@include transform(translate(0%,-50%));
 						top: 50%;
-						right: 15px;
+                        right: 15px;
+                        
+                        @include respond-to($mobile){
+                            position: inherit;  
+                            right: inherit;
+                            top: inherit;
+                            transform: none;
+                            float: none !important;
+                    }
 					}
 					
 				}
@@ -554,11 +600,13 @@ ul {
 			color: $black !important;
 			span{
 				&:first-child{
-					text-align: right;
+                    text-align: right;
+                    word-wrap: break-word;
 				}
 				&:last-child{
 					text-align: left;
-					font-weight: bold;
+                    font-weight: bold;
+                    word-wrap: break-word;
 				}
 			}
 		}
@@ -569,6 +617,16 @@ ul {
 footer{
     background: $footer-bg;
     padding: 30px 0;
+
+    @include respond-to($mobile){
+        text-align: center;
+        .align-right{
+            text-align: center;
+        }
+       section{
+           margin: 10px 0 30px;
+       }
+    }
     .semi_dark.title{
         margin-bottom: 10px;
         font-size: $font-semimedium;
